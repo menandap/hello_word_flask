@@ -1,13 +1,10 @@
-from flask import Flask, jsonify, render_template
+from flask import Flask
+
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    try:
-        return render_template('index.html')
-
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500
+    return 'Hello, World!'
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
